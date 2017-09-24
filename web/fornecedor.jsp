@@ -1,6 +1,20 @@
-<%@page import="javax.swing.JOptionPane"%>
+<%-- 
+    Document   : fornecedor
+    Created on : Sep 24, 2017, 7:42:07 PM
+    Author     : LuizV1
+--%>
 <%@ page pageEncoding="UTF-8" %>
 <%@ page import="br.com.projeto03.fatec.Fornecedor"%>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+       <%@page import="javax.swing.JOptionPane"%>
+
 <% 
             try{             
                 if(request.getParameter("addfornecedor")!=null){
@@ -57,7 +71,7 @@
             
         %>
         
-      <%@ include file="inputfornecedor.jspf"%>
+      <%@ include file="WEB-INF/jspf/inputfornecedor.jspf"%>
       
        
       
@@ -139,3 +153,5 @@
             
             
         </script>
+    </body>
+</html>
