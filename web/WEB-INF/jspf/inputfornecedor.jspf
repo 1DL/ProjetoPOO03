@@ -31,7 +31,7 @@
                     <tr align="left"><th>
                             <label><font face ="verdana" size="3"><b>Telefone: </b></font></label></th>
                         <th>
-                            <input type="text" name="txttelefone" placeholder="99-9999-99999"/>
+                            <input type="number" name="txttelefone" placeholder="99-9999-99999"/>
                         </th>
                     </tr> 
                     <tr align="left"><th>
@@ -48,8 +48,7 @@
                     </tr> 
                     
                 </table>
-                <br>
-                <input type="submit" name="btnCalcula" value="Calcular"/>
+                
                 
             </form>
 
