@@ -1,0 +1,7 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<hr><center>
+<button onclick="window.location.href='cliente.jsp'">Cadastro Cliente</button>
+<button onclick="window.location.href='fornecedor.jsp'">Cadastro Fornecedor</button>
+</center>
+<br><br>
