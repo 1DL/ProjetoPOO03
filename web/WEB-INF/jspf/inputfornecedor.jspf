@@ -7,43 +7,45 @@
                     <tr align="left"><th>
                             <label><font face ="verdana" size="3"><b>Fornecedor: </b></font></label></th>
                         <th>
-                            <input type="text" name="txtnome" placeholder="Digite o nome do fornecedor"/>
+                            <input type="text" id="idnome" name="txtnome" placeholder="Digite o nome do fornecedor"/>
                         </th>
                     </tr>
                     <tr align="left"><th>
                             <label><font face ="verdana" size="3"><b>Razão Social: </b></font></label></th>
                         <th>
-                            <input type="text" name="txtrazao" placeholder="Digite a Razão Social"/>
+                            <input type="text" id="idrazao" name="txtrazao" placeholder="Digite a Razão Social"/>
                         </th>
                     </tr>
                     <tr align="left"><th>
                             <label><font face ="verdana" size="3"><b>CNPJ: </b></font></label></th>
                         <th>
-                            <input type="number" name="txtcnpj" placeholder="Digite o CNPJ"/>
+                            <input type="number" id="idcnpj" name="txtcnpj" placeholder="Digite o CNPJ"/>
                         </th>
                     </tr> 
                     <tr align="left"><th>
                             <label><font face ="verdana" size="3"><b>Email: </b></font></label></th>
                         <th>
-                            <input type="email" name="txtemail" placeholder="fornecedor@fatec.com.br"/>
+                            <input type="email" id="idemail" name="txtemail" placeholder="fornecedor@fatec.com.br"/>
                         </th>
                     </tr> 
                     <tr align="left"><th>
                             <label><font face ="verdana" size="3"><b>Telefone: </b></font></label></th>
                         <th>
-                            <input type="number" name="txttelefone" placeholder="99-9999-99999"/>
+                            <input type="number" id="idtelefone" name="txttelefone" placeholder="99-9999-99999"/>
                         </th>
                     </tr> 
                     <tr align="left"><th>
                             <label><font face ="verdana" size="3"><b>Endereço: </b></font></label></th>
                         <th>
-                            <input type="text" name="txtendereco" placeholder="Digite o endereço do fornecedor"/>
+                            <input type="hidden" id="idindex" name="txtindex" value="-1"/> 
+                            <input type="text" id="idendereco" name="txtendereco" placeholder="Digite o endereço do fornecedor"/>
+                            
                         </th>
                     </tr>
                     <tr align="left"><th>
                             
                         <th>
-                            <input type="submit" name="addfornecedor" value="Cadastrar"/>
+                            <input type="submit" id="idadd" name="addfornecedor" value="Cadastrar"/>
                         </th>
                     </tr> 
                     

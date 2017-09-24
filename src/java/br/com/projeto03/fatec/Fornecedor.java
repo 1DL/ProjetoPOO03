@@ -34,6 +34,8 @@ public class Fornecedor {
     }
     
     
+    
+    
     public String setNome(String nome) {
         if (nome.equals("")) {
             return "Nome do fornecedor em branco!";

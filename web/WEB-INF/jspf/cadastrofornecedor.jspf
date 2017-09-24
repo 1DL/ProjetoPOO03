@@ -1,20 +1,10 @@
+<%@page import="javax.swing.JOptionPane"%>
 <%@ page pageEncoding="UTF-8" %>
 <%@ page import="br.com.projeto03.fatec.Fornecedor"%>
 <% 
-            try{
-                if(request.getParameter("altfornecedor")!=null){
-                    int j = Integer.parseInt(request.getParameter("indexalt"));
-                    Fornecedor f= new Fornecedor();
-                    f.setNome(request.getParameter("tdnome"));
-                    f.setRazaoSocial(request.getParameter("tdnome"));
-                    f.setCnpj(Integer.parseInt(request.getParameter("tdnome")));
-                    f.setEmail(request.getParameter("tdnome"));
-                    f.setTelefone(Integer.parseInt(request.getParameter("tdnome")));
-                    f.setEndereco(request.getParameter("tdnome"));
-                    Fornecedor.getList().set(j, f);
-                    response.sendRedirect(request.getRequestURI());
-                
-                }else if(request.getParameter("addfornecedor")!=null){
+            try{             
+                if(request.getParameter("addfornecedor")!=null){
+                    int i = -1;
                     String nome = request.getParameter("txtnome");
                     String razaoSocial = request.getParameter("txtrazao");
                     int cnpj = Integer.parseInt(request.getParameter("txtcnpj"));
@@ -28,21 +18,51 @@
                     f.setEmail(email);
                     f.setTelefone(telefone);
                     f.setEndereco(endereco);
-                    Fornecedor.getList().add(f);
-                    response.sendRedirect(request.getRequestURI());
+                    i = Integer.parseInt(request.getParameter("txtindex"));
+                    if (i < 0) {
+                        Fornecedor.getList().add(f);
+                        response.sendRedirect(request.getRequestURI());
+                    }else if (i >= 0) {
+                        Fornecedor.getList().set(i, f);
+                        response.sendRedirect(request.getRequestURI());
+                            }
                 } else if (request.getParameter("delfornecedor")!=null){
                     int i = Integer.parseInt(request.getParameter("indexdel"));
                     Fornecedor.getList().remove(i);
                     response.sendRedirect(request.getRequestURI());//Retira parametros depois de executar uma tarefa
                 
-                }
+                }/* else if (request.getParameter("altfornecedor")!=null) {
+                    int j = Integer.parseInt(request.getParameter("indexalt"));
+                    String nome = request.getParameter("tdnome"+j);
+                    
+                    String razaoSocial = request.getParameter("txtrazao");
+                    int cnpj = Integer.parseInt(request.getParameter("txtcnpj"));
+                    String email = request.getParameter("txtemail");
+                    int telefone = Integer.parseInt(request.getParameter("txttelefone"));
+                    String endereco = request.getParameter("txtendereco");
+                    Fornecedor f = new Fornecedor();
+                    f.setNome(nome);
+                    f.setRazaoSocial(razaoSocial);
+                    f.setCnpj(cnpj);
+                    f.setEmail(email);
+                    f.setTelefone(telefone);
+                    f.setEndereco(endereco);
+                    
+                    Fornecedor.getList().set(j, f);
+                    response.sendRedirect(request.getRequestURI());
+                }*/
                 
-            }catch(Exception ex) {}        
+            }catch(Exception ex) {}
+            
+            
         %>
         
       <%@ include file="inputfornecedor.jspf"%>
-
-      <table border="1">
+      
+       
+      
+      
+      <table id="tablef" border="1">
             <tr>
                 <th>Índice</th>
                 <th>Nome</th>
@@ -53,22 +73,23 @@
                 <th>Endereço</th>
             </tr>
             <%try{%>
-                <%int i=0, j=0;%>
+                <%int i=0,j=0;%>
                 <%for(Fornecedor f: Fornecedor.getList()){%>
-                <tr><form>
+                <tr>
                     <td><%=i%></td>
-                    <td><input type="text" name="tdnome" value="<%= f.getNome()%>"/></td>
-                    <td><input type="text" name="tdrazao" value="<%= f.getRazaoSocial()%>"/></td>
-                    <td><input type="number" name="tdcnpj" value="<%= f.getCnpj()%>"/></td>
-                    <td><input type="email" name="tdemail" value="<%= f.getEmail()%>"/></td>
-                    <td><input type="number" name="tdtelefone" value="<%= f.getTelefone()%>"/></td>
-                    <td><input type="text" name="tdenderec" value="<%= f.getEndereco()%>"/></td>
+                    <td><input type="text" id="tdnome<%=i%>" value="<%= f.getNome()%>"/></td>
+                    <td><input type="text" id="tdrazao<%=i%>" value="<%= f.getRazaoSocial()%>"/></td>
+                    <td><input type="number" id="tdcnpj<%=i%>" value="<%= f.getCnpj()%>"/></td>
+                    <td><input type="email" id="tdemail<%=i%>" value="<%= f.getEmail()%>"/></td>
+                    <td><input type="number" id="tdtelefone<%=i%>" value="<%= f.getTelefone()%>"/></td>
+                    <td><input type="text" id="tdendereco<%=i%>" value="<%= f.getEndereco()%>"/></td>
                 
                     <td>
-                        
-                            <input type="hidden" name="indexalt" value="<%=(j++)%>"/>
-                            <input type="submit" name="altfornecedor" value="Alterar"/>
-                        </form>
+                        <form>
+                            <input type="hidden" id="indexalt" name="indexalt" value="<%=(j++)%>"/>
+                           
+                            <input type="button" name="altfornecedor" value="Alterar" onclick="passarAtributos(this.form.indexalt.value)"/>
+                        </form>    
                     </td>
                     <td>
                         <form>
@@ -85,3 +106,36 @@
             </tr>
             <%}%>
         </table>
+        
+         <script>
+            var msg ;
+            function passarAtributos(indice){
+                
+                msg = document.getElementById('tdnome'+indice).value;
+                document.getElementById('idnome').value = msg;
+                
+                msg = document.getElementById('tdrazao'+indice).value;
+                document.getElementById('idrazao').value = msg;
+                
+                msg = document.getElementById('tdcnpj'+indice).value;
+                document.getElementById('idcnpj').value = msg;
+                
+                msg = document.getElementById('tdemail'+indice).value;
+                document.getElementById('idemail').value = msg;
+                
+                msg = document.getElementById('tdtelefone'+indice).value;
+                document.getElementById('idtelefone').value = msg;
+                
+                msg = document.getElementById('tdendereco'+indice).value;
+                document.getElementById('idendereco').value = msg;
+                
+                document.getElementById('idindex').value = indice;
+                
+                alert(document.getElementById('idindex').value);
+                
+                document.getElementById('idadd').click();
+                //alert(msg);
+            }
+            
+            
+        </script>
