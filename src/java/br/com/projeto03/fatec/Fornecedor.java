@@ -5,22 +5,35 @@
  */
 package br.com.projeto03.fatec;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author LuizV1
  */
 public class Fornecedor {
     private String nome;
-    private String razãoSocial;
-    private String cnpj;
+    private String razaoSocial;
+    private int cnpj;
     private String email;
-    private String telefone;
-    private String endereço;
+    private int telefone;
+    private String endereco;
 
     public String getNome() {
         return nome;
     }
-
+    
+    public static ArrayList<Fornecedor> fornecedor;
+    public static ArrayList<Fornecedor> getList()
+    {
+        if (fornecedor == null)
+        {
+            fornecedor = new ArrayList<>();
+        }
+        return fornecedor;
+    }
+    
+    
     public String setNome(String nome) {
         if (nome.equals("")) {
             return "Nome do fornecedor em branco!";
@@ -30,19 +43,19 @@ public class Fornecedor {
         }
     }
 
-    public String getRazãoSocial() {
-        return razãoSocial;
+    public String getRazaoSocial() {
+        return razaoSocial;
     }
 
-    public void setRazãoSocial(String razãoSocial) {
-        this.razãoSocial = razãoSocial;
+    public void setRazaoSocial(String razãoSocial) {
+        this.razaoSocial = razãoSocial;
     }
 
-    public String getCnpj() {
+    public int getCnpj() {
         return cnpj;
     }
 
-    public void setCnpj(String cnpj) {
+    public void setCnpj(int cnpj) {
         this.cnpj = cnpj;
     }
 
@@ -54,19 +67,19 @@ public class Fornecedor {
         this.email = email;
     }
 
-    public String getTelefone() {
+    public int getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(String telefone) {
+    public void setTelefone(int telefone) {
         this.telefone = telefone;
     }
 
-    public String getEndereço() {
-        return endereço;
+    public String getEndereco() {
+        return endereco;
     }
 
-    public void setEndereço(String endereço) {
-        this.endereço = endereço;
+    public void setEndereco(String endereço) {
+        this.endereco = endereço;
     }
 }
