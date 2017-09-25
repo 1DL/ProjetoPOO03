@@ -1,0 +1,23 @@
+<%@ page pageEncoding="UTF-8" %>
+<div>
+                <fieldset>
+                    <legend>Cadastro de clientes</legend>
+                    <div align="center">
+                        <form name="frmCliente" method="POST">
+                            Nome:
+                            <input type="text" name="txtCliente" placeholder="Digite seu nome"/>
+                            CPF:
+                            <input type="number" name="txtCPF" placeholder="Digite seu CPF"/><br/><br/>
+                            RG:
+                            <input type="number" name="txtRG" placeholder="Digite seu RG"/>
+                            E-mail:
+                            <input type="email" name="txtEmail" placeholder="cliente@dominio.com"/><br/><br/>
+                            Telefone:
+                            <input type="number" name="txtTelefone" placeholder="Digite seu telefone"/>
+                            Endereço:
+                            <input type="text" name="txtEndereco" placeholder="Digite seu endereço"/><br/><br/>
+                            <input type="submit" name="btnAdicionar" value="Adicionar"/>
+                        </form>
+                    </div>
+                </fieldset>
+</div>

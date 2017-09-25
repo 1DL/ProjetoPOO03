@@ -10,10 +10,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Cadastro de Fornecedores</title>
     </head>
     <body>
-       <%@page import="javax.swing.JOptionPane"%>
+       <%@include file="WEB-INF/jspf/header.jspf" %>
 
 <% 
             try{             
@@ -74,7 +74,7 @@
       <%@ include file="WEB-INF/jspf/inputfornecedor.jspf"%>
       
        
-      
+      <center><h2>Lista de clientes cadastrados</h2></center>
       
       <table id="tablef" border="1">
             <tr>
@@ -85,6 +85,8 @@
                 <th>Email</th>
                 <th>Telefone</th>
                 <th>Endereço</th>
+                <th>Alterar</th>
+                <th>Excluir</th>
             </tr>
             <%try{%>
                 <%int i=0,j=0;%>
@@ -93,7 +95,7 @@
                     <td><%=i%></td>
                     <td><input type="text" id="tdnome<%=i%>" value="<%= f.getNome()%>"/></td>
                     <td><input type="text" id="tdrazao<%=i%>" value="<%= f.getRazaoSocial()%>"/></td>
-                    <td><input type="number" id="tdcnpj<%=i%>" value="<%= f.getCnpj()%>"/></td>
+                    <td><input type="number" id="tdcnpj<%=i%>" size="14" maxlength="14" value="<%= f.getCnpj()%>"/></td>
                     <td><input type="email" id="tdemail<%=i%>" value="<%= f.getEmail()%>"/></td>
                     <td><input type="number" id="tdtelefone<%=i%>" value="<%= f.getTelefone()%>"/></td>
                     <td><input type="text" id="tdendereco<%=i%>" value="<%= f.getEndereco()%>"/></td>
@@ -121,10 +123,14 @@
             <%}%>
         </table>
         
-         <script>
+         <script javascript>
             var msg ;
+            var flagBool;
             function passarAtributos(indice){
                 
+                flag = confirm("Deseja realmente alterar o registro?");
+                
+                if (flagBool) {
                 msg = document.getElementById('tdnome'+indice).value;
                 document.getElementById('idnome').value = msg;
                 
@@ -145,13 +151,23 @@
                 
                 document.getElementById('idindex').value = indice;
                 
-                alert(document.getElementById('idindex').value);
+                
                 
                 document.getElementById('idadd').click();
+                }
+                
+                else {
+                    
+                }
                 //alert(msg);
             }
             
             
+            
+            
         </script>
+        
+        <%@include file="WEB-INF/jspf/menu.jspf" %>
+        <%@include file="WEB-INF/jspf/footer.jspf"%>
     </body>
 </html>

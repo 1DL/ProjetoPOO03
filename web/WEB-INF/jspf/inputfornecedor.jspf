@@ -1,8 +1,10 @@
 <%@ page pageEncoding="UTF-8" %>
+<center><h1>Cadastro de Fornecedores</h1></center>
 <div>
-
-
-    <form name ="frmfornecedor">
+    <fieldset><legend>Cadastro de Fornecedores</legend>
+        <div align="center">
+        
+            <form name ="frmfornecedor">
                 <table bgcolor="#E0F8F7">
                     <tr align="left"><th>
                             <label><font face ="verdana" size="3"><b>Fornecedor: </b></font></label></th>
@@ -19,7 +21,7 @@
                     <tr align="left"><th>
                             <label><font face ="verdana" size="3"><b>CNPJ: </b></font></label></th>
                         <th>
-                            <input type="number" id="idcnpj" name="txtcnpj" placeholder="Digite o CNPJ"/>
+                            <input type="number" id="idcnpj" name="txtcnpj" placeholder="Digite o CNPJ" maxlength="14" size='14'/>
                         </th>
                     </tr> 
                     <tr align="left"><th>
@@ -31,7 +33,7 @@
                     <tr align="left"><th>
                             <label><font face ="verdana" size="3"><b>Telefone: </b></font></label></th>
                         <th>
-                            <input type="number" id="idtelefone" name="txttelefone" placeholder="99-9999-99999"/>
+                            <input type="number" id="idtelefone" name="txttelefone" placeholder="99-9999-99999" maxlength="11"/>
                         </th>
                     </tr> 
                     <tr align="left"><th>
@@ -39,20 +41,16 @@
                         <th>
                             <input type="hidden" id="idindex" name="txtindex" value="-1"/> 
                             <input type="text" id="idendereco" name="txtendereco" placeholder="Digite o endereço do fornecedor"/>
-                            
-                        </th>
+                            </th>
                     </tr>
                     <tr align="left"><th>
-                            
-                        <th>
+                            <th>
                             <input type="submit" id="idadd" name="addfornecedor" value="Cadastrar"/>
                         </th>
                     </tr> 
-                    
-                </table>
-                
-                
+                </table>                
             </form>
-
         </div>
+    </fieldset>
+</div>
 <br>

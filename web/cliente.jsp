@@ -11,9 +11,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Clientes - JSP Page</title>
+        <title>Cadastro de Clientes</title>
     </head>
     <body>
+        <%@include file="WEB-INF/jspf/header.jspf" %>
         <center><h1>Cadastro de clientes</h1></center>
         <%
             try
@@ -50,28 +51,8 @@
             catch(Exception ex){%>
                     <div>Erro ao processar o form.</div>                
             <%}%>            
-            <div>
-                <fieldset>
-                    <legend>Cadastro de clientes</legend>
-                    <div align="center">
-                        <form name="frmCliente" method="POST">
-                            Nome:
-                            <input type="text" name="txtCliente" placeholder="Digite seu nome"/>
-                            CPF:
-                            <input type="number" name="txtCPF" placeholder="Digite seu CPF"/><br/><br/>
-                            RG:
-                            <input type="number" name="txtRG" placeholder="Digite seu RG"/>
-                            E-mail:
-                            <input type="email" name="txtEmail" placeholder="cliente@dominio.com"/><br/><br/>
-                            Telefone:
-                            <input type="number" name="txtTelefone" placeholder="Digite seu telefone"/>
-                            Endereço:
-                            <input type="text" name="txtEndereco" placeholder="Digite seu endereço"/><br/><br/>
-                            <input type="submit" name="btnAdicionar" value="Adicionar"/>
-                        </form>
-                    </div>
-                </fieldset>
-            </div>
+            
+            <%@ include file="WEB-INF/jspf/inputcliente.jspf"%>
             
         <center><h2>Lista de clientes cadastrados</h2></center>
         
@@ -84,8 +65,8 @@
                 <th>E-mail</th>
                 <th>Telefone</th>
                 <th>Endereço</th>
-                <th>Exclusão</th>
-                <th>Alteração</th>
+                <th>Alterar</th>
+                <th>Excluir</th>
             </tr>
             
             <%try{%>
@@ -128,5 +109,7 @@
             
             <%}%> 
         </table>
+        <%@include file="WEB-INF/jspf/menu.jspf" %>
+        <%@include file="WEB-INF/jspf/footer.jspf"%>
     </body>
 </html>

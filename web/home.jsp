@@ -10,10 +10,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Home - Sistema de Cadastro de Clientes e Fornecedores</title>
     </head>
     <body>
-        
+        <%@include file="WEB-INF/jspf/header.jspf" %>
         
   
         <header>
@@ -21,7 +21,7 @@
                 <legend><h1>Programação Orientada a Objetos - Terceiro projeto</h1> 
                     <h2>Proposta:</h2>
                     <font face ="verdana" size="3"><b>Esta aplicação web tem como 
-                        objetivo cadastrar registros de Clientes e Fornecedores.
+                        objetivo cadastrar registros de Clientes e Fornecedores localmente.
                     Possui a funcionalidade de listar, apagar, e alterar os registros
                     salvos em memória.</b></font></legend>
                 <hr>
@@ -39,6 +39,7 @@
         
         
         <%@include file="WEB-INF/jspf/menu.jspf" %>
+        <%@include file="WEB-INF/jspf/footer.jspf"%>
                 
     </body>
 </html>
