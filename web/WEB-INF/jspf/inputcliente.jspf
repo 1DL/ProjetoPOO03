@@ -3,20 +3,21 @@
                 <fieldset>
                     <legend>Cadastro de clientes</legend>
                     <div align="center">
-                        <form name="frmCliente" method="POST">
+                        <form name="frmCliente">
                             Nome:
-                            <input type="text" name="txtCliente" placeholder="Digite seu nome"/>
+                            <input type="text" id="idCliente" name="txtCliente" placeholder="Digite seu nome"/>
                             CPF:
-                            <input type="number" name="txtCPF" placeholder="Digite seu CPF"/><br/><br/>
+                            <input type="number" id="idCPF" name="txtCPF" placeholder="Digite seu CPF"/><br/><br/>
                             RG:
-                            <input type="number" name="txtRG" placeholder="Digite seu RG"/>
+                            <input type="number" id="idRG" name="txtRG" placeholder="Digite seu RG"/>
                             E-mail:
-                            <input type="email" name="txtEmail" placeholder="cliente@dominio.com"/><br/><br/>
+                            <input type="email" id="idEmail" name="txtEmail" placeholder="cliente@dominio.com"/><br/><br/>
                             Telefone:
-                            <input type="number" name="txtTelefone" placeholder="Digite seu telefone"/>
+                            <input type="number" id="idTelefone" name="txtTelefone" placeholder="Digite seu telefone"/>
                             Endereço:
-                            <input type="text" name="txtEndereco" placeholder="Digite seu endereço"/><br/><br/>
-                            <input type="submit" name="btnAdicionar" value="Adicionar"/>
+                            <input type="text" id="idEndereco" name="txtEndereco" placeholder="Digite seu endereço"/><br/><br/>
+                            <input type="hidden" id="idIndice" name="txtIndice" value="-1"/>
+                            <input type="submit" id="idAdicionar" name="btnAdicionar" value="Adicionar"/>
                         </form>
                     </div>
                 </fieldset>

@@ -76,7 +76,7 @@
        
       <center><h2>Lista de clientes cadastrados</h2></center>
       
-      <table id="tablef" border="1">
+      <table id="tablef" border="1" align="center">
             <tr>
                 <th>Índice</th>
                 <th>Nome</th>
