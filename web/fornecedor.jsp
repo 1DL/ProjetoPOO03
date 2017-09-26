@@ -124,32 +124,32 @@
         </table>
         
          <script javascript>
-            var msg ;
-            var flagBool;
-            function passarAtributos(indice){
+            var msgf ;
+            var flagBoolf;
+            function passarAtributos(indicef){
                 
-                flag = confirm("Deseja realmente alterar o registro?");
+               flagBoolf = confirm("Deseja realmente alterar o registro?");
                 
-                if (flagBool) {
-                msg = document.getElementById('tdnome'+indice).value;
-                document.getElementById('idnome').value = msg;
+                if (flagBoolf) {
+                msgf = document.getElementById('tdnome'+indicef).value;
+                document.getElementById('idnome').value = msgf;
                 
-                msg = document.getElementById('tdrazao'+indice).value;
-                document.getElementById('idrazao').value = msg;
+                msgf = document.getElementById('tdrazao'+indicef).value;
+                document.getElementById('idrazao').value = msgf;
                 
-                msg = document.getElementById('tdcnpj'+indice).value;
-                document.getElementById('idcnpj').value = msg;
+                msgf = document.getElementById('tdcnpj'+indicef).value;
+                document.getElementById('idcnpj').value = msgf;
                 
-                msg = document.getElementById('tdemail'+indice).value;
-                document.getElementById('idemail').value = msg;
+                msgf = document.getElementById('tdemail'+indicef).value;
+                document.getElementById('idemail').value = msgf;
                 
-                msg = document.getElementById('tdtelefone'+indice).value;
-                document.getElementById('idtelefone').value = msg;
+                msgf = document.getElementById('tdtelefone'+indicef).value;
+                document.getElementById('idtelefone').value = msgf;
                 
-                msg = document.getElementById('tdendereco'+indice).value;
-                document.getElementById('idendereco').value = msg;
+                msgf = document.getElementById('tdendereco'+indicef).value;
+                document.getElementById('idendereco').value = msgf;
                 
-                document.getElementById('idindex').value = indice;
+                document.getElementById('idindex').value = indicef;
                 
                 
                 
@@ -159,6 +159,8 @@
                 else {
                     
                 }
+                
+                
                 //alert(msg);
             }
             
