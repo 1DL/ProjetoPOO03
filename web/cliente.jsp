@@ -95,7 +95,7 @@
                 <td>
                     <form>
                         <input type="hidden" id="indiceAlt" name="indiceAlt" value="<%=(j++)%>"/>
-                        <input type="submit" name="btnAlterar" value="Alterar" onclick="passarValores(this.form.indiceAlt.value)"/>
+                        <input type="button" name="btnAlterar" value="Alterar" onclick="passarValores(this.form.indiceAlt.value)"/>
                     </form>
                 </td>
                 
@@ -126,7 +126,7 @@
             var flagBool;
             function passarValores(indice){
                 
-                flag = confirm("Deseja realmente alterar o registro?");
+                flagBool = confirm("Deseja realmente alterar o registro?");
                 
                 if (flagBool) {
                 mensagem = document.getElementById('tdCliente'+indice).value;
