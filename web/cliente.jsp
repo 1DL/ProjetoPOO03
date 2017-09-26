@@ -15,7 +15,7 @@
     </head>
     <body>
         <%@include file="WEB-INF/jspf/header.jspf" %>
-        <center><h1>Cadastro de clientes</h1></center>
+        <center><h1>Cadastro de Clientes</h1></center>
         <%
             try
             {
@@ -66,7 +66,7 @@
             
         <center><h2>Lista de clientes cadastrados</h2></center>
         
-        <table id="idTabelaCliente" border='1' align = "center">
+        <table id="idTabelaCliente" class="table table-striped" align = "center">
             <tr>
                 <th>Índice</th>
                 <th>Nome do cliente</th>
@@ -80,29 +80,29 @@
             </tr>
             
             <%try{%>
-            <%int i = 0, j = 0;%>
+            <%int i = 0;%>
             <%for (Cliente cl: Cliente.getCliente()){%>
             <tr>
                 <td><%=i%></td>
-                    <td><input type="text" id="tdCliente<%=i%>" value="<%= cl.getNome()%>"/></td>
-                    <td><input type="number" id="tdCPF<%=i%>" value="<%= cl.getCpf()%>"/></td>
-                    <td><input type="number" id="tdRG<%=i%>" size="14" maxlength="14" value="<%= cl.getRg()%>"/></td>
-                    <td><input type="email" id="tdEmail<%=i%>" value="<%= cl.getEmail()%>"/></td>
-                    <td><input type="number" id="tdTel<%=i%>" value="<%= cl.getTelefone()%>"/></td>
-                    <td><input type="text" id="tdEndereco<%=i%>" value="<%= cl.getEndereço()%>"/></td>
+                    <td><input class="form-control" type="text" id="tdCliente<%=i%>" value="<%= cl.getNome()%>" /></td>
+                    <td><input class="form-control" type="text" id="tdCPF<%=i%>" value="<%= cl.getCpf()%>" pattern="\d{3}\.\d{3}\.\d{3}/\d{2}"/></td>
+                    <td><input class="form-control" type="text" id="tdRG<%=i%>" value="<%= cl.getRg()%>" pattern="\d{2}\.\d{3}\.\d{3}-\d{1}"/></td>
+                    <td><input class="form-control" type="email" id="tdEmail<%=i%>" value="<%= cl.getEmail()%>"/></td>
+                    <td><input class="form-control" type="text" id="tdTel<%=i%>" value="<%= cl.getTelefone()%>" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4}"/></td>
+                    <td><input class="form-control" type="text" id="tdEndereco<%=i%>" value="<%= cl.getEndereço()%>"/></td>
                   
                 
                 <td>
                     <form>
-                        <input type="hidden" id="indiceAlt" name="indiceAlt" value="<%=(j++)%>"/>
-                        <input type="button" name="btnAlterar" value="Alterar" onclick="passarValores(this.form.indiceAlt.value);"/>
+                        <input type="hidden" id="indiceAlt" name="indiceAlt" value="<%=(i)%>"/>
+                        <button type="button" class="btn btn-primary" name="btnAlterar" value="Alterar" onclick="passarValores(this.form.indiceAlt.value);">Alterar</button>
                     </form>
                 </td>
                 
                 <td>
                     <form>
                         <input type="hidden" name="indiceExcluir" value="<%=(i++)%>"/>
-                        <input type="submit" name="btnExcluir" value="Excluir"/>
+                        <button type="submit" class="btn btn-primary" name="btnExcluir" value="Excluir">Excluir</button>
                     </form>
                 </td>
                 
@@ -165,7 +165,6 @@
         
         </script>
         
-        <%@include file="WEB-INF/jspf/menu.jspf" %>
         <%@include file="WEB-INF/jspf/footer.jspf"%>
     </body>
 </html>

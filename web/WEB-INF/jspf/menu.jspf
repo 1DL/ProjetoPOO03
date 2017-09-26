@@ -1,6 +1,6 @@
 <%@ page pageEncoding="UTF-8" %>
 <br><hr><center><h2>Escolha uma das opções:</h2>
-<button onclick="window.location.href='cliente.jsp'">Cadastro Cliente</button>
-<button onclick="window.location.href='fornecedor.jsp'">Cadastro Fornecedor</button>
+<button type="button" class="btn btn-primary" onclick="window.location.href='cliente.jsp'">Cadastro Cliente</button>
+<button type="button" class="btn btn-primary" onclick="window.location.href='fornecedor.jsp'">Cadastro Fornecedor</button>
 </center>
 <br><br>

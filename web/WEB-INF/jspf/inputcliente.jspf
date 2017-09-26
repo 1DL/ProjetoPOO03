@@ -1,25 +1,86 @@
 <%@ page pageEncoding="UTF-8" %>
-<div>
-                <fieldset>
-                    <legend>Cadastro de clientes</legend>
-                    <div align="center">
+<div class="p-3 mb-2 bg-white text-gray-dark">
+                    <div class ="p-3 mb-2 bg-white text-gray-dark" align="center">
                         <form name="frmCliente">
-                            Nome:
-                            <input type="text" id="idCliente" name="txtCliente" placeholder="Digite seu nome"/>
-                            CPF:
-                            <input type="number" id="idCPF" name="txtCPF" placeholder="Digite seu CPF"/><br/><br/>
-                            RG:
-                            <input type="number" id="idRG" name="txtRG" placeholder="Digite seu RG"/>
-                            E-mail:
-                            <input type="email" id="idEmail" name="txtEmail" placeholder="cliente@dominio.com"/><br/><br/>
-                            Telefone:
-                            <input type="number" id="idTelefone" name="txtTelefone" placeholder="Digite seu telefone"/>
-                            Endereço:
-                            <input type="hidden" id="idIndice" name="txtIndice" value="-1"/>
-                            <input type="text" id="idEndereco" name="txtEndereco" placeholder="Digite seu endereço"/><br/><br/>
-                            
-                            <input type="submit" id="idAdicionar" name="btnAdicionar" value="Adicionar"/>
+                            <table>
+                                <tr align ="left">
+                                    <th>Nome:</th>
+                                    <th><input class="form-control" type="text" id="idCliente" name="txtCliente" placeholder="Digite seu nome" required="txtCliente" size="50"/></th>
+                                </tr>
+                                </tr>
+                                <tr>
+                                    <th></th> 
+                                </tr>
+
+                                <tr>
+                                    <th></th> 
+                                </tr> 
+                                <tr align ="left">
+                                    <th>CPF:</th>
+                                    <th><input class="form-control" type="text" id="idCPF" name="txtCPF" placeholder="xxx.xxx.xxx-xx" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required="txtCPF"/></th>
+                                </tr>
+                                </tr>
+                                <tr>
+                                    <th></th> 
+                                </tr>
+
+                                <tr>
+                                    <th></th> 
+                                </tr> 
+                                <tr align="left">
+                                    <th>RG:</th>
+                                    <th><input class="form-control" type="text" id="idRG" name="txtRG" placeholder="xx.xxx.xxx-x" pattern="\d{2}\.\d{3}\.\d{3}-\d{1}" required="txtRG"/></th>
+                                </tr>
+                                </tr>
+                                <tr>
+                                    <th></th> 
+                                </tr>
+
+                                <tr>
+                                    <th></th> 
+                                </tr> 
+                                <tr align="left">
+                                    <th>E-mail:</th>
+                                    <th><input class="form-control" type="email" id="idEmail" name="txtEmail" placeholder="cliente@dominio.com"/></th>
+                                </tr>
+                                </tr>
+                                <tr>
+                                    <th></th> 
+                                </tr>
+
+                                <tr>
+                                    <th></th> 
+                                </tr> 
+                                <tr align="left">
+                                    <th>Telefone:</th>
+                                    <th><input class="form-control" type="text" id="idTelefone" name="txtTelefone" placeholder="(xx) xxxx-xxxx" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4}" required="txtTelefone"/></th>
+                                </tr>
+                                </tr>
+                                <tr>
+                                    <th></th> 
+                                </tr>
+
+                                <tr>
+                                    <th></th> 
+                                </tr> 
+                                <tr align="left">
+                                    <th>Endereço:</th>
+                                    <th>
+                                    <input type="hidden" id="idIndice" name="txtIndice" value="-1"/>                                
+                                    <input class="form-control" type="text" id="idEndereco" name="txtEndereco" placeholder="Digite seu endereço" required="txtEndereco"/>
+                                    </th>
+                                </tr>
+                                </tr>
+                                <tr>
+                                    <th></th> 
+                                </tr>
+
+                                <tr>
+                                    <th></th> 
+                                </tr> 
+                            </table>
+                            <br/>
+                            <button type="button" class="btn btn-primary" id="idAdicionar" name="btnAdicionar" value="Adicionar">Cadastrar</button>
                         </form>
                     </div>
-                </fieldset>
 </div>

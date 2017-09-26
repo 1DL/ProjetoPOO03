@@ -21,9 +21,9 @@
                     int i = -1;
                     String nome = request.getParameter("txtnome");
                     String razaoSocial = request.getParameter("txtrazao");
-                    int cnpj = Integer.parseInt(request.getParameter("txtcnpj"));
+                    String cnpj = request.getParameter("txtcnpj");
                     String email = request.getParameter("txtemail");
-                    int telefone = Integer.parseInt(request.getParameter("txttelefone"));
+                    String telefone = request.getParameter("txttelefone");
                     String endereco = request.getParameter("txtendereco");
                     Fornecedor f = new Fornecedor();
                     f.setNome(nome);
@@ -74,9 +74,9 @@
       <%@ include file="WEB-INF/jspf/inputfornecedor.jspf"%>
       
        
-      <center><h2>Lista de clientes cadastrados</h2></center>
+      <center><h2>Lista de fornecedores cadastrados</h2></center>
       
-      <table id="tablef" border="1" align="center">
+      <table id="tablef" class="table table-striped">
             <tr>
                 <th>Índice</th>
                 <th>Nome</th>
@@ -86,31 +86,31 @@
                 <th>Telefone</th>
                 <th>Endereço</th>
                 <th>Alterar</th>
-                <th>Excluir</th>
+                <th>Excluir</th>               
             </tr>
             <%try{%>
-                <%int i=0,j=0;%>
+                <%int i=0;%>
                 <%for(Fornecedor f: Fornecedor.getList()){%>
                 <tr>
                     <td><%=i%></td>
-                    <td><input type="text" id="tdnome<%=i%>" value="<%= f.getNome()%>"/></td>
-                    <td><input type="text" id="tdrazao<%=i%>" value="<%= f.getRazaoSocial()%>"/></td>
-                    <td><input type="number" id="tdcnpj<%=i%>" size="14" maxlength="14" value="<%= f.getCnpj()%>"/></td>
-                    <td><input type="email" id="tdemail<%=i%>" value="<%= f.getEmail()%>"/></td>
-                    <td><input type="number" id="tdtelefone<%=i%>" value="<%= f.getTelefone()%>"/></td>
-                    <td><input type="text" id="tdendereco<%=i%>" value="<%= f.getEndereco()%>"/></td>
+                    <td><input class="form-control" type="text" id="tdnome<%=i%>" value="<%= f.getNome()%>"/></td>
+                    <td><input class="form-control" type="text" id="tdrazao<%=i%>" value="<%= f.getRazaoSocial()%>"/></td>
+                    <td><input class="form-control" type="text" id="tdcnpj<%=i%>" size="14" maxlength="14" value="<%= f.getCnpj()%>"/></td>
+                    <td><input class="form-control" type="email" id="tdemail<%=i%>" value="<%= f.getEmail()%>"/></td>
+                    <td><input class="form-control" type="text" id="tdtelefone<%=i%>" value="<%= f.getTelefone()%>"/></td>
+                    <td><input class="form-control" type="text" id="tdendereco<%=i%>" value="<%= f.getEndereco()%>"/></td>
                 
                     <td>
                         <form>
-                            <input type="hidden" id="indexalt" name="indexalt" value="<%=(j++)%>"/>
+                            <input type="hidden" id="indexalt" name="indexalt" value="<%=(i)%>"/>
                            
-                            <input type="button" name="altfornecedor" value="Alterar" onclick="passarAtributos(this.form.indexalt.value)"/>
+                            <button type="button" class="btn btn-primary" name="altfornecedor" value="Alterar" onclick="passarAtributos(this.form.indexalt.value)">Alterar</button>
                         </form>    
                     </td>
                     <td>
                         <form>
                             <input type="hidden" name="indexdel" value="<%=(i++)%>"/>
-                            <input type="submit" name="delfornecedor" value="Excluir"/>
+                            <button type="submit" class="btn btn-primary" name="delfornecedor" value="Excluir">Excluir</button>
                         </form>
                 </tr>
                 <%}%>
@@ -169,7 +169,6 @@
             
         </script>
         
-        <%@include file="WEB-INF/jspf/menu.jspf" %>
         <%@include file="WEB-INF/jspf/footer.jspf"%>
     </body>
 </html>
