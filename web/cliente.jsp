@@ -95,7 +95,7 @@
                 <td>
                     <form>
                         <input type="hidden" id="indiceAlt" name="indiceAlt" value="<%=(j++)%>"/>
-                        <input type="button" name="btnAlterar" value="Alterar" onclick="passarValores(this.form.indiceAlt.value)"/>
+                        <input type="button" name="btnAlterar" value="Alterar" onclick="passarValores(this.form.indiceAlt.value);"/>
                     </form>
                 </td>
                 
@@ -123,31 +123,31 @@
         
         <script javascript>
             var mensagem ;
-            var flagBool;
-            function passarValores(indice){
+            var flagBoolc;
+            function passarValores(indicec){
                 
-                flagBool = confirm("Deseja realmente alterar o registro?");
+                flagBoolc = confirm("Deseja realmente alterar o registro?");
                 
-                if (flagBool) {
-                mensagem = document.getElementById('tdCliente'+indice).value;
+                if (flagBoolc) {
+                mensagem = document.getElementById('tdCliente'+indicec).value;
                 document.getElementById('idCliente').value = mensagem;
                 
-                mensagem = document.getElementById('tdCPF'+indice).value;
+                mensagem = document.getElementById('tdCPF'+indicec).value;
                 document.getElementById('idCPF').value = mensagem;
                 
-                mensagem = document.getElementById('tdRG'+indice).value;
+                mensagem = document.getElementById('tdRG'+indicec).value;
                 document.getElementById('idRG').value = mensagem;
                 
-                mensagem = document.getElementById('tdEmail'+indice).value;
+                mensagem = document.getElementById('tdEmail'+indicec).value;
                 document.getElementById('idEmail').value = mensagem;
                 
-                mensagem = document.getElementById('tdTelefone'+indice).value;
+                mensagem = document.getElementById('tdTel'+indicec).value;
                 document.getElementById('idTelefone').value = mensagem;
                 
-                mensagem = document.getElementById('tdEndereco'+indice).value;
+                mensagem = document.getElementById('tdEndereco'+indicec).value;
                 document.getElementById('idEndereco').value = mensagem;
                 
-                document.getElementById('idIndice').value = indice;
+                document.getElementById('idIndice').value = indicec;
                 
                 
                 
@@ -160,7 +160,7 @@
                 }
                 
                 
-                      
+    }          
         
         
         </script>

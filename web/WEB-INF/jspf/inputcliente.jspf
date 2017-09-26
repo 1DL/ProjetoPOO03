@@ -15,8 +15,9 @@
                             Telefone:
                             <input type="number" id="idTelefone" name="txtTelefone" placeholder="Digite seu telefone"/>
                             Endereço:
-                            <input type="text" id="idEndereco" name="txtEndereco" placeholder="Digite seu endereço"/><br/><br/>
                             <input type="hidden" id="idIndice" name="txtIndice" value="-1"/>
+                            <input type="text" id="idEndereco" name="txtEndereco" placeholder="Digite seu endereço"/><br/><br/>
+                            
                             <input type="submit" id="idAdicionar" name="btnAdicionar" value="Adicionar"/>
                         </form>
                     </div>
